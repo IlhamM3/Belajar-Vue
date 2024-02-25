@@ -263,7 +263,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions(StoreTodo, ['tambahtodo', 'DeleteTodo', 'DoneTodo', ' EditTodo']),
+    ...mapActions(StoreTodo, ['tambahtodo', 'DeleteTodo', 'DoneTodo', ' todoEdit']),
     inputreset() {
       Object.assign(this.input, inisialinput)
     },
@@ -272,7 +272,7 @@ export default {
       this.inputreset();
     },
     SubmitEdit(){
-      this.EditTodo(this.input, this.input.index);
+      this.todoEdit(this.input);
       this.inputreset();
     },
     indexedit(index){

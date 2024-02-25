@@ -47,8 +47,9 @@ export const StoreTodo = defineStore('todo', {
                 throw error;
             }
         },
-        EditTodo(input, index) {
+        todoEdit(input) {
             try {
+                const index = input.index;
                 if (index > -1) {
                     // Menyalin objek input agar tidak merusak referensi asli
                     const editedTodo = { ...input };
@@ -58,7 +59,7 @@ export const StoreTodo = defineStore('todo', {
                 console.error(error);
                 throw error;
             }
-        }
+        },
     }
 });
 </script>
