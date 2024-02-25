@@ -1,24 +1,44 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
+  <header class="remove"> 
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
       <nav>
-        <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/signin">Sign In</RouterLink>
       </nav>
     </div>
   </header>
-
-  <RouterView />
+  <RouterView/>
 </template>
+
+<script>
+import { RouterLink, RouterView } from 'vue-router'
+import HelloWorld from './components/HelloWorld.vue'
+
+export default {
+  components: {
+    HelloWorld,
+    RouterLink,
+    RouterView,
+  },
+  mounted() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const remove = document.querySelector('.remove');
+      remove.remove();
+    }else{
+      const admin = document.querySelectorAll('.admin');
+      admin.forEach=()=>{
+        admin.remove()
+      }
+
+    }
+  }
+}
+</script>
 
 <style scoped>
 header {
@@ -81,5 +101,9 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+
+.hidden {
+  display: none;
 }
 </style>
