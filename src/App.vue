@@ -29,12 +29,15 @@ export default {
     if (token) {
       const remove = document.querySelector('.remove');
       remove.remove();
+      const cssApp = document.querySelector('#app');
+      cssApp.style.display = 'grid';
+      cssApp.style.gridTemplateColumns = '1fr';
+      cssApp.style.padding = '0 2rem';
+      cssApp.style.maxWidth = '180vh';
+      cssApp.style.maxheight = '200vh';
     }else{
-      const admin = document.querySelectorAll('.admin');
-      admin.forEach=()=>{
-        admin.remove()
-      }
-
+      const cssBody = document.querySelector('body');
+      cssBody .style.overflowY = 'hidden';  
     }
   }
 }
