@@ -1,10 +1,17 @@
-<script setup>
+<!-- <script setup>
 import WelcomeItem from './WelcomeItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'
 import EcosystemIcon from './icons/IconEcosystem.vue'
 import CommunityIcon from './icons/IconCommunity.vue'
 import SupportIcon from './icons/IconSupport.vue'
+import router from "@/router";
+
+const token = localStorage.getItem('token');
+if(token)
+{
+  router.replace('/dashboard');
+}
 </script>
 
 <template>
@@ -85,4 +92,4 @@ import SupportIcon from './icons/IconSupport.vue'
     us by
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
   </WelcomeItem>
-</template>
+</template> -->
